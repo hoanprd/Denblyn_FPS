@@ -41,7 +41,7 @@ public class MainMenuControl : MonoBehaviour
         GlobalWeapons.HandGun = 0;
         GlobalWeapons.Original = 0;
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene("Dia1");
     }
 
     public void LoadGame()

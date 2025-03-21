@@ -71,7 +71,7 @@ public class Dia1 : MonoBehaviour
         }
         if (dem == 13)
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene("Level000");
         }
     }
 }
