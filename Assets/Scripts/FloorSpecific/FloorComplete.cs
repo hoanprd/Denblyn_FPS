@@ -35,6 +35,6 @@ public class FloorComplete : MonoBehaviour
         GlobalScore.scoreValue = 0;
         GlobalComplete.killsCount = 0;
         GlobalComplete.treasureCount = 0;
-        SceneManager.LoadScene(GlobalComplete.GoToDia);
+        //SceneManager.LoadScene(GlobalComplete.GoToDia);
     }
 }
