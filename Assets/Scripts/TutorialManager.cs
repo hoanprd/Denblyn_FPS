@@ -6,11 +6,12 @@ using UnityStandardAssets.Characters.FirstPerson;
 public class TutorialManager : MonoBehaviour
 {
     public GameObject TutorialPanel;
-    public GameObject Tutor1;
+    public GameObject[] tutorPic;
+    /*public GameObject Tutor1;
     public GameObject Tutor2;
     public GameObject Tutor3;
     public GameObject Tutor4;
-    public GameObject Tutor5;
+    public GameObject Tutor5;*/
     public GameObject thePlayer;
     public int dem;
     public bool IsActive = true;
@@ -18,7 +19,18 @@ public class TutorialManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dem = 1;
+        //dem = 1;
+        for (int i = 0; i < tutorPic.Length; i++)
+        {
+            if (dem == i)
+            {
+                tutorPic[i].SetActive(true);
+            }
+            else
+            {
+                tutorPic[i].SetActive(false);
+            }
+        }
     }
 
     // Update is called once per frame
@@ -38,9 +50,27 @@ public class TutorialManager : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.F) && IsActive == true)
         {
             dem++;
+            if (dem >= tutorPic.Length)
+            {
+                IsActive = false;
+            }
+            else
+            {
+                for (int i = 0; i < tutorPic.Length; i++)
+                {
+                    if (dem == i)
+                    {
+                        tutorPic[i].SetActive(true);
+                    }
+                    else
+                    {
+                        tutorPic[i].SetActive(false);
+                    }
+                }
+            }
         }
 
-        if (dem == 1)
+        /*if (dem == 1)
         {
             Tutor1.SetActive(true);
             Tutor2.SetActive(false);
@@ -79,7 +109,7 @@ public class TutorialManager : MonoBehaviour
             Tutor3.SetActive(false);
             Tutor4.SetActive(false);
             Tutor5.SetActive(true);
-        }
+        }*/
         else if (dem >= 6)
         {
             IsActive = false;
